@@ -59,7 +59,7 @@ End while
 
 Creates a new bag and returns its reference
 
-If the name is passed, the reference may be retrieved from the name, by the **bag\_findByName** command.
+If the name is passed, the reference may be retrieved from the name, by the [**bag\_findByName**](#bag_findbyname--name---baghandles----baghandle) command.
 
 ```
 $bag := bag_new ( "myBag" )
@@ -69,7 +69,7 @@ $bag := bag_new ( "myBag" )
 
 Creates a copy of the bag bagHandle and returns its reference
 
-If the name is passed, the reference may be retrieved from the name, by the **bag\_findByName** command.
+If the name is passed, the reference may be retrieved from the name, by the [**bag\_findByName**](#bag_findbyname--name---baghandles----baghandle) command.
 
 ```
 $bag2 := bag_copy ( $bag ; "myBag" )
@@ -88,7 +88,7 @@ bag_clear 				            //delete all created bags
 
 If *bagHandle* is not a valid bag reference, a warning assertion* is displayed.
 
-**Note**: By default, assertions are enabled but they may have been disabled using the **bag\_SET_OPTION** command.
+**Note**: By default, assertions are enabled but they may have been disabled using the [**bag\_SET_OPTION**](#bag_set_option--option--on-) command.
 
 ## Put Value Routines
 
@@ -123,7 +123,7 @@ This command allows to store a one-dimensional array pointed to by the third par
 
 All type of arrays are managed except 2-dimensional arrays.
 
-The fourth optional parameter is a boolean. If the parameter "internal format" is **false**, the array is stored so that you can get or set more quickly an element. If this parameter is **true**  (default value), the array is compacted before to be stored. This mode is faster for storage and loading large arrays but will be less rapid to get or set an element. Choose the best mode according to your needs.
+The fourth optional parameter is a boolean. If the parameter "internal format" is **False**, the array is stored so that you can get or set more quickly an element. If this parameter is **True**  (default value), the array is compacted before to be stored. This mode is faster for storage and loading large arrays but will be less rapid to get or set an element. Choose the best mode according to your needs.
 
 The type of the array, the count of elements and the current element are stored as properties and can be retrieved without loading the array.
 
@@ -139,10 +139,10 @@ bag_putLong ( $bag ; "ID" ; 123456789 )
 
 The managed operators for this command are:
 
-| Operators | Actions                                                                     |
+| Operators | Actions   [^ignored]                                                        |
 |:---------:|:--------------------------------------------------------------------------- |
-| ++        |increment by one the current value\*                                         |
-| --        |decrement by one the current value\*                                         |
+| ++        |increment by one the current value                                           |
+| --        |decrement by one the current value                                           |
 | +=        |add the passed value to the current value                                    |
 | -=        |subtract the passed value from the current value                             |
 | *=        |multiplie the current value with the value passed                            |
@@ -153,7 +153,8 @@ The managed operators for this command are:
 | !         |the stored value will be 1 if it was equal to 0 and 0 if not                 |
 | &=        |store a bitwise AND between the stored value and the passed value            |
 | \|=       |store a bitwise OR (inclusive) between the stored value and the passed value |
- *The second parameter is ignored
+
+[^ignored]: For increment et decrement, the second parameter is ignored
 
 _Examples_:
 
@@ -180,8 +181,8 @@ The managed operators for this command are:
 
 | Operators | Actions                                                                    |
 |:---------:|:-------------------------------------------------------------------------- |
-| ++        |increment by one the current value\*                                        |
-| --        |decrement by one the current value\*                                        |
+| ++        |increment by one the current value                                          |
+| --        |decrement by one the current value                                          |
 | +=        |add the passed value to the current value                                   |
 | -=        |subtract the passed value from the current value                            |
 | *=        |multiplie the current value with the value passed                           |
@@ -189,8 +190,7 @@ The managed operators for this command are:
 | \=        |perform a longint division of the current value with the passed value       |
 | %=        |do the remainder of the division of the current value with the passed value |
 | ^=        |for an exponentiation of the current value with the passed value            |
- 
- *The second parameter is ignored
+
 
 ### **bag_putText** ( *bagHandle* ; *pathname* {; *text* })
 
@@ -517,14 +517,15 @@ This command allow to turn on/off some options of the component according to the
 
 Option value can be:
 
-|options         |meaning|default                                             |
-|----------------|------------------------------------------------------------|---------|
-|"default"       |All options are restored to their default value             |
-|"assertions"    |to turn on/off assertion\*                                  |**True** |
-|"variant types" |turns on/off the modification of the type of an element\**  |**False**|
+|options         |meaning                                                             |default  |
+|:---------------|:-------------------------------------------------------------------|:--------|
+|"default"       |All options are restored to their default value                     |         |
+|"assertions"    |to turn on/off assertion [^assertion]                               |**True** |
+|"variant types" |turns on/off the modification of the type of an element [^variant]  |**False**|
 
-\*An assertion is a message to inform the developer about something that is (error) or seems to be (warning) an anomaly. When the assertions are turned "On", the code isn't completed if it's an error. When the assertions are turned "Off", the code is completed if possible without message. Usually, you set assertions "On" in development mode or test mode and "Off" for the final user.
 
-\**By default, if you try to put a value into an item of a different type, an error is generated. However if you want to change a type of an item you can change the behavior by this option.
+[^assertion]: An assertion is a message to inform the developer about something that is (error) or seems to be (warning) an anomaly. When the assertions are turned "On", the code isn't completed if it's an error. When the assertions are turned "Off", the code is completed if possible without message. Usually, you set assertions "On" in development mode or test mode and "Off" for the final user.
+
+[^variant]: By default, if you try to put a value into an item of a different type, an error is generated. However if you want to change a type of an item you can change the behavior by this option.
 
  
