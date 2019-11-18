@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+   <!--      Translation file.This file is distributed under the same license as the product package.-->
+<!DOCTYPE xliff PUBLIC "-//XLIFF//DTD XLIFF//EN" "http://www.oasis-open.org/committees/xliff/documents/xliff.dtd">
+<xliff version="1.0">
+   <file datatype="x-STR#" original="undefined" source-language="en" target-language="en">
+      <header>
+         <prop-group name="Xliff-Editor.4dbase">
+            <prop prop-type="separator">_</prop>
+            <prop prop-type="version">1.0</prop>
+         </prop-group>
+      </header>
+      <body>
+         <group resname="errors">
+            <trans-unit id="1" resname="Errors_thisContainerDoesntExist">
+               <source>This value bag doesn&apos;t exist</source>
+               <target>This value bag doesn&apos;t exist</target>
+            </trans-unit>
+            <trans-unit id="2" resname="Errors_missingParameter">
+               <source>Missing parameter</source>
+               <target>Missing parameter</target>
+            </trans-unit>
+            <trans-unit id="3" resname="Errors_theItemExistsButWithAnOtherType{type}">
+               <source>The item exists, but with an other type ({type})</source>
+               <target>The item exists, but with an other type ({type})</target>
+            </trans-unit>
+            <trans-unit id="5" resname="Errors_theItem{tag}DoesNotExist">
+               <source>The item &quot;{tag}&quot; does not exist.</source>
+               <target>The item &quot;{tag}&quot; does not exist.</target>
+            </trans-unit>
+            <trans-unit id="6" resname="Errors_internalError">
+               <source>Internal error</source>
+               <target>Internal error</target>
+            </trans-unit>
+            <trans-unit id="7" resname="Errors_thePointerCantBeAPointerToALocalVariable">
+               <source>The pointer can&apos;t be a pointer to a local variable</source>
+               <target>The pointer can&apos;t be a pointer to a local variable</target>
+            </trans-unit>
+            <trans-unit id="8" resname="Errors_theItem{tag}IsNotAnArray">
+               <source>The item &quot;{tag}&quot; is not an array.</source>
+               <target>The item &quot;{tag}&quot; is not an array.</target>
+            </trans-unit>
+            <trans-unit id="9" resname="Errors_theTypeOfArrayIsNotCompatibleWithTheValueToStore">
+               <source>The type of array is not compatible with the value to store</source>
+               <target>The type of array is not compatible with the value to store</target>
+            </trans-unit>
+            <trans-unit id="10" resname="Errors_theArrayIndexIsOutOfBounds">
+               <source>The array index is out of bounds</source>
+               <target>The array index is out of bounds</target>
+            </trans-unit>
+            <trans-unit id="13" resname="Errors_invalidPathname">
+               <source>Invalid pathname</source>
+               <target>Invalid pathname</target>
+            </trans-unit>
+            <trans-unit id="14" resname="Errors_aLevelInThePathnameIsNotValid">
+               <source>A level in the pathname is not valid</source>
+               <target>A level in the pathname is not valid</target>
+            </trans-unit>
+            <trans-unit id="14" resname="Errors_thisTypeOfArrayIsNotManaged">
+               <source>This type of array is not managed</source>
+               <target>This type of array is not managed</target>
+            </trans-unit>
+            <trans-unit id="15" resname="Errors_theItem{tag}IsNotABlob">
+               <source>The item &quot;{tag}&quot; is not a blob.</source>
+               <target>The item &quot;{tag}&quot; is not a blob.</target>
+            </trans-unit>
+            <trans-unit id="16" resname="Errors_theItem{tag}IsNotAPointer">
+               <source>The item &quot;{tag}&quot; is not a pointer.</source>
+               <target>The item &quot;{tag}&quot; is not a pointer.</target>
+            </trans-unit>
+         </group>
+         <group resname="warning" id="3">
+            <trans-unit id="4" resname="Warning_divisionByZero">
+               <source>Division by zero</source>
+               <target>Division by zero</target>
+            </trans-unit>
+            <trans-unit id="11" resname="Warning_operatorNotSupportedForThisTypeOfData">
+               <source>Operator not supported for this type of data</source>
+               <target>Operator not supported for this type of data</target>
+            </trans-unit>
+         </group>
+      </body>
+   </file>
+</xliff>
