@@ -1,7 +1,5 @@
 # bag4D v1.0 (12/2013)
 
--
-
 When I make my shopping, I buy a pack of six bottles of milk, bread and salt. I put everything in my shopping bag. When arriving at home I retrieves each article in the bag without thinking to how to do more than necessary.  With bag4D you can do the same, in your code.
 
 ***bag4D***  is a component which provides a set of commands that lets you create data bags where you can store and retrieve data like you want. You must keep a value? put it in a bag, then another method or a form can test if the element exists and recover the stored value.
@@ -22,7 +20,7 @@ bag_putBoolean ( $bag ; "options.general.close window" ; True )
 
 In this example, after the call to ***bag\_putBoolean***, *$bag* contains the embedded bag "options", which contains the embedded bag "general", which contains the embedded bag "close window" that contains the value **True**.
 
-* The elements of a bag​​, shares properties and methods to simplify the code. For example:
+* The elements of a bag​​, shares [properties](#properties) and [methods](#methods) to simplify the code. For example:
 
 ```
 $bag := bag_new ( "TEST" )
