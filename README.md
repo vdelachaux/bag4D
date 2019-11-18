@@ -1,6 +1,6 @@
 # bag4D v1.0 (12/2013)
 
---
+-
 
 When I make my shopping, I buy a pack of six bottles of milk, bread and salt. I put everything in my shopping bag. When arriving at home I retrieves each article in the bag without thinking to how to do more than necessary.  With bag4D you can do the same, in your code.
 
@@ -15,12 +15,12 @@ When I make my shopping, I buy a pack of six bottles of milk, bread and salt. I 
 
 _Example_:
 
-```		
+```
 $bag := bag_new ( "parameters" )
 bag_putBoolean ( $bag ; "options.general.close window" ; True )
 ```
 
-In this example, after the call to ***bag\_putBoolean***, *$bag* contains the embedded bag “options”, which contains the embedded bag “general”, which contains the embedded bag “close window” that contains the value True.
+In this example, after the call to ***bag\_putBoolean***, *$bag* contains the embedded bag "options", which contains the embedded bag "general", which contains the embedded bag "close window" that contains the value **True**.
 
 * The elements of a bag​​, shares properties and methods to simplify the code. For example:
 
@@ -28,7 +28,7 @@ In this example, after the call to ***bag\_putBoolean***, *$bag* contains the em
 $bag := bag_new ( "TEST" )
 bag_putLong ( $bag ; "long_1++")
 bag_putLong ( $bag ; "long_2" ; 2 )
-…
+...
 bag_putLong ( $bag ; "long_9" ; 9 )
 
 bag ( "TEST.sum()" ; -> $sum ) 	//45
@@ -40,7 +40,7 @@ bag ( "TEST.average()" ; -> $average )	//5
 While ( bag ( "TEST.forEach()" ) )
 	bag ( "TEST.this.name" ; -> $name)  //get the name of the current element
 	bag ( "TEST.this.value" ; -> $value )  //get the value
-	…
+	...
 	bag ( "TEST.this.index" ; -> $i )  //get the index
 	If ( ( $i % 2 ) = 0)
 		bag ( "TEST.this.empty()" )  //clear the value
@@ -57,7 +57,7 @@ End while
 
 ## Creation & Destruction Routines
 
-### **bag_new**  {( name )} -> *bagHandle*
+### **bag\_new**  {( name )} -> *bagHandle*
 
 Creates a new bag and returns its reference
 
@@ -67,7 +67,7 @@ If the name is passed, the reference may be retrieved from the name, by the **ba
 $bag := bag_new ( "myBag" )
 ```
 
-### bag_copy ( *bagHandle* {; *name* }) -> *bagHandle*
+### bag\_copy ( *bagHandle* {; *name* }) -> *bagHandle*
 
 Creates a copy of the bag bagHandle and returns its reference
 
@@ -76,7 +76,7 @@ If the name is passed, the reference may be retrieved from the name, by the **ba
 ```
 $bag2 := bag_copy ( $bag ; "myBag" )
 ```
-### **bag_clear** {( *bagHandle* {; *elementName* })}
+### **bag\_clear** {( *bagHandle* {; *elementName* })}
 
 Deletes the element elementName of the bag bagHandle. 
 
@@ -118,7 +118,7 @@ Some commands accept an operator as suffix. This operator allows  to modify the 
 bag_putPicture ( $bag ; "myPicture+=" ; $picture ) 
 bag_putLong ( $bag ; "myCounter++" )
 ```
--
+
 ### **bag_putArray** ( *bagHandle* ; *pathname* ; -> *array* {; *internal format* })
 
 This command allows to store a one-dimensional array pointed to by the third parameter in the bag referenced by the parameter bagHandle.
@@ -168,7 +168,6 @@ bag_putLong ( $bag ; "number%=" ; 100 )       // value is 0,02
 bag_putLong ( $Bag ; "arrayLong[3]++")
 ```		
 
--
 ### **bag_putReal** ( *bagHandle* ; *pathname* {; *real* })
 
 This command allow to store a real in the bag referenced by the parameter bagHandle.
@@ -210,8 +209,8 @@ The concatenation operator is managed as name suffix to modify an existing text 
 ```
 bag_putText ( $bag ; "welcomeMessage" ; "Hello" )       //value is Hello
 bag_putText ( $bag ; "welcomeMessage+=" ; " world!" )   //value is Hello world!
-
 ```
+
 ### **bag_putBoolean** ( *bagHandle* ; *pathname* {; *boolean* })
 
 This command allow to store a boolean in the bag referenced by the parameter bagHandle.
@@ -308,7 +307,7 @@ This command allows to embed an existing bag in the bag referenced by the parame
 bag_putVariable ( $bag ; "myVar" ;  $bag2 )
 ```
 
-## Get Value Routines
+## Get Value Routines
 
 This set of commands allow to get the value of an item stored into the value bag.
 
@@ -372,7 +371,7 @@ This command sets the object pointed to by the 3rd parameter with the value of a
 
 This command doesn't allow to retrieve the value of an array element.
 
-## Item info routines
+## Item info routines
 
 ### **bag_itemExist** ( *bagHandles*  ; *name* ) -> *boolean*
 
@@ -388,7 +387,8 @@ The types are the values of the corresponding types in 4D plus one: 8858 is retu
 
 Returns the size of the array stored in the item name in the value bag bagHandle.
 
-## The command bag
+## The command bag
+
 This command is a shortcut to manage items in a value bag.
 
 The syntax is very simple: give it, in the first parameter, the name of a bag and an action to perform, it will return true if the action was completed and, where appropriate, a value in the object pointed to by the second parameter. Like this:
@@ -409,8 +409,7 @@ For example, after execution of the line below, the variable 'result' will conta
 bag ( 'myBag.sum()'  ; -> result )
 ```
 
-
-### methods
+### methods 
 
 ### **forEach()**
 This method is used to iterate through each element of an array or of a bag. Exp:
@@ -476,9 +475,10 @@ For a BLOB or an image, if a second pointer is passed as 3rd parameter, the vari
 
 **value** the variable pointed to by the second parameter is populated with the data of the stored element. If possible, a data conversion is performed according to the variable pointed.
 
-## Utility Routines
+## Utility Routines
+
 ### **bag_findByName** ( *name* {; ->*bagHandles* }) -> *bagHandle*
-* 
+
 Returns the reference of the first created bag whose name is equivalent to the string passed in parameter name. If several bags are found, the command can also fill the array passed by pointer in the second parameter with the reference of each bag.
 
 ```
@@ -519,11 +519,11 @@ This command allow to turn on/off some options of the component according to the
 
 Option value can be:
 
-|options|meaning|default|
-|---|---|---|
-|"default"|All options are restored to their default value|
-|"assertions"|to turn on/off assertion\*|**True**|
-|"variant types"|turns on/off the modification of the type of an element\**|**False**|
+|options         |meaning|default                                             |
+|----------------|------------------------------------------------------------|---------|
+|"default"       |All options are restored to their default value             |
+|"assertions"    |to turn on/off assertion\*                                  |**True** |
+|"variant types" |turns on/off the modification of the type of an element\**  |**False**|
 
 \*An assertion is a message to inform the developer about something that is (error) or seems to be (warning) an anomaly. When the assertions are turned "On", the code isn't completed if it's an error. When the assertions are turned "Off", the code is completed if possible without message. Usually, you set assertions "On" in development mode or test mode and "Off" for the final user.
 
