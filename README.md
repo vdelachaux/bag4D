@@ -139,7 +139,7 @@ bag_putLong ( $bag ; "ID" ; 123456789 )
 
 The managed operators for this command are:
 
-| Operators | Actions   [^ignored]                                                        |
+| Operators | Actions   [^1]                                                        |
 |:---------:|:--------------------------------------------------------------------------- |
 | ++        |increment by one the current value                                           |
 | --        |decrement by one the current value                                           |
@@ -154,7 +154,7 @@ The managed operators for this command are:
 | &=        |store a bitwise AND between the stored value and the passed value            |
 | \|=       |store a bitwise OR (inclusive) between the stored value and the passed value |
 
-[^ignored]: For increment et decrement, the second parameter is ignored
+[^1]: For increment et decrement, the second parameter is ignored
 
 _Examples_:
 
