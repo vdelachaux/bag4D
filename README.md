@@ -139,7 +139,7 @@ bag_putLong ( $bag ; "ID" ; 123456789 )
 
 The managed operators for this command are:
 
-| Operators | Actions   [^ignored]                                                        |
+| Operators | Actions   [^1]                                                        |
 |:---------:|:--------------------------------------------------------------------------- |
 | ++        |increment by one the current value                                           |
 | --        |decrement by one the current value                                           |
@@ -154,7 +154,7 @@ The managed operators for this command are:
 | &=        |store a bitwise AND between the stored value and the passed value            |
 | \|=       |store a bitwise OR (inclusive) between the stored value and the passed value |
 
-[^ignored]: For increment et decrement, the second parameter is ignored
+[^1]: For increment et decrement, the second parameter is ignored
 
 _Examples_:
 
@@ -520,12 +520,12 @@ Option value can be:
 |options         |meaning                                                             |default  |
 |:---------------|:-------------------------------------------------------------------|:--------|
 |"default"       |All options are restored to their default value                     |         |
-|"assertions"    |to turn on/off assertion [^assertion]                               |**True** |
-|"variant types" |turns on/off the modification of the type of an element [^variant]  |**False**|
+|"assertions"    |to turn on/off assertion [^2]                                       |**True** |
+|"variant types" |turns on/off the modification of the type of an element [^3]        |**False**|
 
 
-[^assertion]: An assertion is a message to inform the developer about something that is (error) or seems to be (warning) an anomaly. When the assertions are turned "On", the code isn't completed if it's an error. When the assertions are turned "Off", the code is completed if possible without message. Usually, you set assertions "On" in development mode or test mode and "Off" for the final user.
+[^2]: An assertion is a message to inform the developer about something that is (error) or seems to be (warning) an anomaly. When the assertions are turned "On", the code isn't completed if it's an error. When the assertions are turned "Off", the code is completed if possible without message. Usually, you set assertions "On" in development mode or test mode and "Off" for the final user.
 
-[^variant]: By default, if you try to put a value into an item of a different type, an error is generated. However if you want to change a type of an item you can change the behavior by this option.
+[^3]: By default, if you try to put a value into an item of a different type, an error is generated. However if you want to change a type of an item you can change the behavior by this option.
 
  
