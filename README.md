@@ -1,7 +1,5 @@
 # bag4D v1.0 (12/2013)
 
---
-
 When I make my shopping, I buy a pack of six bottles of milk, bread and salt. I put everything in my shopping bag. When arriving at home I retrieves each article in the bag without thinking to how to do more than necessary.  With bag4D you can do the same, in your code.
 
 ***bag4D***  is a component which provides a set of commands that lets you create data bags where you can store and retrieve data like you want. You must keep a value? put it in a bag, then another method or a form can test if the element exists and recover the stored value.
