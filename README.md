@@ -13,7 +13,7 @@ When I make my shopping, I buy a pack of six bottles of milk, bread and salt. I 
 
 _Example_:
 
-```
+```4d
 $bag := bag_new ( "parameters" )
 bag_putBoolean ( $bag ; "options.general.close window" ; True )
 ```
@@ -22,7 +22,7 @@ In this example, after the call to ***bag\_putBoolean***, *$bag* contains the em
 
 * The elements of a bag​​, shares [properties](#properties) and [methods](#methods) to simplify the code. For example:
 
-```
+```4d
 $bag := bag_new ( "TEST" )
 bag_putLong ( $bag ; "long_1++")
 bag_putLong ( $bag ; "long_2" ; 2 )
@@ -61,7 +61,7 @@ Creates a new bag and returns its reference
 
 If the name is passed, the reference may be retrieved from the name, by the [**bag\_findByName**](#bag_findbyname--name---baghandles----baghandle) command.
 
-```
+```4d
 $bag := bag_new ( "myBag" )
 ```
 
@@ -71,7 +71,7 @@ Creates a copy of the bag bagHandle and returns its reference
 
 If the name is passed, the reference may be retrieved from the name, by the [**bag\_findByName**](#bag_findbyname--name---baghandles----baghandle) command.
 
-```
+```4d
 $bag2 := bag_copy ( $bag ; "myBag" )
 ```
 ### **bag\_clear** {( *bagHandle* {; *elementName* })}
@@ -80,7 +80,7 @@ Deletes the element elementName of the bag bagHandle.
 
 If the second parameter is omitted, it's the entire bag bagHandle that is deleted. If no parameter is passed all bags are deleted.
 
-```
+```d4
 bag_clear ( $bag ; "element 1" )	//delete element 1 form the value bag $Bag
 bag_clear ( $bag  )			        //delete the value bag $Bag
 bag_clear 				            //delete all created bags
@@ -104,7 +104,7 @@ If an item with the given name or pathname exists and has a different type, if t
 
 When relevant, the name may refer to an array element by adding the index of the item in square brackets. For example the line below, sets to 100 the tenth element of the array stored in the item "counter".
 
-```
+```4d
 bag_putLong ( $bag ; "counter[10]" ; 100 )
 ```
 
@@ -112,7 +112,7 @@ If it is an array element, ***bag4D*** ensures, if possible, the conversion of t
 
 Some commands accept an operator as suffix. This operator allows  to modify the data stored. For example the first line below, adds the picture passed to the right of the stored picture in the element "myPicture". The next line, increments by one the value of the item "myCounter".
 
-```
+```4d
 bag_putPicture ( $bag ; "myPicture+=" ; $picture ) 
 bag_putLong ( $bag ; "myCounter++" )
 ```
@@ -133,7 +133,7 @@ This command allow to store a long integer in the bag referenced by the paramete
 
 The optional third parameter is the value to store in the bag. If this parameter is missing, the value is set to 0.
 
-```
+```4d
 bag_putLong ( $bag ; "ID" ; 123456789 )
 ```
 
@@ -158,7 +158,7 @@ The managed operators for this command are:
 
 _Examples_:
 
-```
+```4d
 bag_putLong ( $bag ; "number" ; 100 )         //value is 100
 bag_putLong ( $bag ; "number++" )	             // value is 101
 bag_putLong ( $bag ; "number*=" ; 2 )         // value is 202
@@ -173,7 +173,7 @@ This command allow to store a real in the bag referenced by the parameter bagHan
 
 The optional third parameter is the value to store in the bag. If this parameter is missing, the value is set to 0.
 
-```
+```4d
 bag_putReal ( $bag ; "Pi" ; 3.141592653589793239 )
 ```
 
@@ -198,13 +198,13 @@ This command allow to store a text in the bag referenced by the parameter bagHan
 
 The optional third parameter is the value to store in the bag. If this parameter is missing, the value is set to "".
 
-```
+```4d
 bag_putText ( $bag ; "welcomeMessage" ; "Hello world!" )
 ```
 
 The concatenation operator is managed as name suffix to modify an existing text element.
 
-```
+```4d
 bag_putText ( $bag ; "welcomeMessage" ; "Hello" )       //value is Hello
 bag_putText ( $bag ; "welcomeMessage+=" ; " world!" )   //value is Hello world!
 ```
@@ -223,7 +223,7 @@ This command allow to store a date in the bag referenced by the parameter bagHan
 
 The optional third parameter is the value to store in the bag. If this parameter is missing, the value is set to 00/00/00.
 
-```
+```4d
 bag_putDate ( $bag ; "today" ; Current date )
 ```
 
@@ -233,7 +233,7 @@ This command allow to store a time value in the bag referenced by the parameter 
 
 The optional third parameter is the value to store in the bag. If this parameter is missing, the value is set to 00:00:00.
 
-```
+```4d
 bag_putTime ( $bag ; "time" ; Current time )
 ```
 
@@ -245,7 +245,7 @@ The optional third parameter is the picture to store in the bag. If this paramet
 
 The fourth optional parameter is the codec to use for the stored image. The default value is ".png"
 
-```
+```4d
 bag_putPicture ( $bag ; "picture" ; $picture ; ".tiff")  // Picture is stored as tiff
 bag_putPicture ( $bag ; "picture" ; $picture )           // Picture is stored as png
 ```
@@ -268,7 +268,7 @@ This command allow to store a blob in the bag referenced by the parameter bagHan
 
 The required third parameter is a pointer to the blob to store in the bag.
 
-```
+```4d
 CONVERT FROM TEXT ( "Hello world!" ; "utf-8" ; $Blob )
 bag_putBlob ( $bag ; "myBlob" ; $Blob )
 ```
@@ -281,7 +281,7 @@ The required third parameter is the pointer to store in the bag.
 
 The pointer can point a variable or a field. All pointers are managed except a pointer to a local variable.
 
-```
+```4d
 bag_putPointer ( $bag ; "myPointer" ; -> [table] )
 ```
 
@@ -293,7 +293,7 @@ The value type must be in: boolean, integer or longint, real, string, text, time
 
 The value can either be retrieved with the command bag_getVariable or bag_get(type) according to the original value's type.
 
-```
+```4d
 bag_putVariable ( $bag ; "myVar" ;  -> vTest )
 ```
 
@@ -301,7 +301,7 @@ bag_putVariable ( $bag ; "myVar" ;  -> vTest )
 
 This command allows to embed an existing bag in the bag referenced by the parameter bagHandle.
 
-```
+```4d
 bag_putVariable ( $bag ; "myVar" ;  $bag2 )
 ```
 
@@ -317,7 +317,7 @@ If possible, bag4D performs the conversion between the type of the stored data a
 
 When relevant, the name may refer to an array element by adding the index of the item in square brackets. For example the line below, gets the tenth element of the array stored in the item "counter".
 
-```
+```4d
 $count10 := bag_getLong ( $bag ; "counter[10]" )
 ```
 
@@ -391,19 +391,19 @@ This command is a shortcut to manage items in a value bag.
 
 The syntax is very simple: give it, in the first parameter, the name of a bag and an action to perform, it will return true if the action was completed and, where appropriate, a value in the object pointed to by the second parameter. Like this:
 
-```
+```4d
 bag ( 'BAGNAME.action'  ; -> object ) -> boolean
 ```
 
 The first parameter should always start with a name of an existing value bag followed by a dot, optionally followed by a path to an item, then the name of a method or of a property.
 
-```
+```4d
 bag ( 'BAGNAME.level_1.level_2action'  ; -> object ) -> boolean
 ```
 
 For example, after execution of the line below, the variable 'result' will contain the sum of all the top-level items of the bag 'myBag'.
 
-```
+```4d
 bag ( 'myBag.sum()'  ; -> result )
 ```
 
@@ -412,7 +412,7 @@ bag ( 'myBag.sum()'  ; -> result )
 ### **forEach()**
 This method is used to iterate through each element of an array or of a bag. Exp:
 
-```
+```4d
 While (bag ( "myBag.forEach()" ))
 	bag ( "myBag.this.name" ; ->$name )
 	bag ( "myBag.this.value" ; ->$value )
@@ -479,14 +479,14 @@ For a BLOB or an image, if a second pointer is passed as 3rd parameter, the vari
 
 Returns the reference of the first created bag whose name is equivalent to the string passed in parameter name. If several bags are found, the command can also fill the array passed by pointer in the second parameter with the reference of each bag.
 
-```
+```4d
 $BagHandle := bag_findByName ( "myBag" )
 $BagHandle := bag_findByName ( "myMultipleBags" ; -> bagHandleArray )
 ```
 
 If you know that there are several bags with the same name, you can retrieve the reference of one of them with this syntax for name : "name[n]" where n is the order of creation of the bag named name.
 
-```
+```4d
 $BagHandle_1 := bag_new ( "options" )
 $BagHandle_2 := bag_new ( "options" )
 $BagHandle_3 := bag_new ( "options" )
@@ -498,7 +498,7 @@ $BagHandle := bag_findByName ( "options[2]" ) // $BagHandle  = $BagHandle_2
 
 This command allow to go through all, first level items, of a bag in a "While…End while" control flow structure. The command can also fill the second parameter passed by pointer with the value of the item.
 
-```
+```4d
 C_REAL ( $sum ; $value)
 While( bag_forEach ( $Lon_bag ; -> $value ))
 	$sum := $sum + $value
